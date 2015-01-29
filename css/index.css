@@ -1,0 +1,33 @@
+#registreer .links {
+	float: left;
+	width: 48%;
+	margin: 1%;
+}
+
+#registreer .rechts {
+	float: left;
+	width: 48%;
+	margin: 1%;
+}
+
+#registreer .volledig {
+	width: 98%;
+	clear: both;
+	margin: 1%;
+}
+
+#registreer .midden {
+	width: 50%;
+	clear: both;
+	margin: 1%;
+}
+
+#registreer form {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#registreer {
+	background-color: #8A8A8A;
+}
