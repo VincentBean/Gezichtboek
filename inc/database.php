@@ -34,6 +34,10 @@ class Database {
 		return mysqli_query($this->connection, $query);
 	}
 
+	function sluit() {
+		mysqli_close($connection);
+	}
+
 }
 
 

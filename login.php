@@ -1,6 +1,7 @@
 <?php
 
 include "inc/account.php";
+include "inc/profiel.php";
 
   $account = new Accounts();
 
@@ -9,8 +10,17 @@ include "inc/account.php";
 
   if ($account->login($email, $wachtwoord)) {
     echo "Ingelogd";
+    $profiel = new Profiel();
+
+
+    if ($profiel->profielGevonden()) {
+    	echo "<br>Naam: " + $profiel->getVoornaam() . " " . $profiel->getAchternaam() . "<br>E-mail: " . $profiel->getEmail() . "<br>Reg. datum: " . $profiel->getRegistratiedatum();
+    } else {
+    	echo "<br>Profiel niet gevonden! <br>ID: " . $_SESSION["id"];
+    }
+
   } else {
-    echo "Gefaalt";
+    echo "Kon niet inloggen.";
   }
 
 

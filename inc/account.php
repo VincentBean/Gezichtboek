@@ -32,6 +32,8 @@ class Accounts {
 		@arg wachtwoord - wachtwoord van de gebruiker
 		@arg email - email van de gebruiker
 
+		TODO: check of gebruiker al bestaat
+
 	*/
 	function registreer($voornaam, $achternaam, $wachtwoord, $email) {
 
@@ -59,11 +61,12 @@ class Accounts {
 
 		if (mysqli_num_rows($result) == 1) {
 
-			if ($this->encryptor->compare($wachtwoord, $result['wachtwoord'])) {
+			$rij = $result->fetch_assoc();
 
-				// inloggegevens juist
+			if ($this->encryptor->check($wachtwoord, $rij["wachtwoord"] )) {
+
 				$_SESSION["loggedin"] = true;
-				$_SESSION["gebruikersnaam"] = $gebruikersnaam;
+				$_SESSION["id"] = $rij["id"];
 
 				return true;
 
