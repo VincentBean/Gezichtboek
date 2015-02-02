@@ -1,4 +1,0 @@
-DATABASE:
-
-Tabel: gebruikers
-	kolommen: ID, naam, wachtwoord, email, leeftijd, persoonlijke_informatie
