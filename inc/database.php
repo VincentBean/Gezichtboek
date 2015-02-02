@@ -11,11 +11,11 @@
 */
 class Database {
 
-	// Properties
+	// Properties LET OP: inloggegevens weghalen!
     private $databaseHost = "127.0.0.1";
-    private $databaseUser = "gezichtboek";
-    private $databasePassword = "returnfalse";
-    private $database = "gezichtboek";
+    private $databaseUser = "";
+    private $databasePassword = ""
+    private $database = "";
     private $connection;
 
     /*
