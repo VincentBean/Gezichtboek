@@ -13,7 +13,7 @@ include "inc/profiel.php";
     $profiel = new Profiel();
 
 
-    if ($profiel->profielGevonden()) {
+    if ($profiel->profielGevonden()) { // profiel is gevonden.
     	echo "<br>Naam: " + $profiel->getVoornaam() . " " . $profiel->getAchternaam() . "<br>E-mail: " . $profiel->getEmail() . "<br>Reg. datum: " . $profiel->getRegistratiedatum();
     } else {
     	echo "<br>Profiel niet gevonden! <br>ID: " . $_SESSION["id"];
