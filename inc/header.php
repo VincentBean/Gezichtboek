@@ -1,7 +1,7 @@
 <?php
 
 	echo "<!-- Navigation -->
-    <nav class='navbar navbar-default navbar-fixed-top' style='background-color: black; height: 5%; padding: 0;'>
+    <nav class='navbar navbar-default navbar-fixed-top' style='background-color: #222; height: 5%; padding: 0;'>
         <div class='container'>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class='navbar-header '>

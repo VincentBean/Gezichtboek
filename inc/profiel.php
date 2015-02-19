@@ -21,37 +21,24 @@ class Profiel {
 	private $bio;
 	private $registratiedatum;
 
+	function __construct($id) {
 
-
-	function __construct() {
 		$this->database = new Database();
 
-		if ( isset($_SESSION["id"])) {
+		$query = "SELECT * FROM gebruikers WHERE id='" . $id . "';";
+		$resultaat = $this->database->query($query);
 
-			$id = $_SESSION["id"];
+		if (mysqli_num_rows($resultaat) == 1) {
+				
+			$resultaat_array = mysqli_fetch_assoc($resultaat);
 
-			$query = "SELECT * FROM gebruikers WHERE id='" . $id . "';";
-			$resultaat = $this->database->query($query);
+			$this->voornaam = $resultaat_array["voornaam"];
+			$this->achternaam = $resultaat_array["achternaam"];
+			$this->email = $resultaat_array["email"];
+			$this->bio = $resultaat_array["bio"];
+			$this->registratiedatum = $resultaat_array["registratiedatum"];
 
-			if (mysqli_num_rows($resultaat) == 1) {
-				echo "1 resultaat";
-				$resultaat_array = mysqli_fetch_assoc($resultaat);
-
-				$this->voornaam = $resultaat_array["voornaam"];
-				$this->achternaam = $resultaat_array["achternaam"];
-				$this->email = $resultaat_array["email"];
-				$this->bio = $resultaat_array["bio"];
-				$this->registratiedatum = $resultaat_array["registratiedatum"];
-
-				$this->profielGevonden = true;
-
-
-
-			} else {
-
-				$this->profielGevonden = false;
-
-			}
+			$this->profielGevonden = true;
 
 		} else {
 
@@ -59,34 +46,13 @@ class Profiel {
 
 		}
 
-
 	}
 
+	public static function laadMetIngelogd() {
 
-	function laadProfielMetMail($email) {
-
-		$query = "SELECT * FROM gebruikers WHERE email='$email';";
-
-		$resultaat = $database->query($query);
-
-
-		if (mysqli_num_rows($resultaat) == 1) {
-
-			$resultaat_array = mysqli_fetch_assoc($resultaat);
-
-			$id = $resultaat_array["id"];
-			$voornaam = $resultaat_array["voornaam"];
-			$achternaam = $resultaat_array["achternaam"];
-			$email = $email;
-			$bio = $resultaat_array["bio"];
-			$registratiedatum = $resultaat_array["registratiedatum"];
-
-			$profielGevonden = true;
-
-		} else {
-			$profielGevonden = false;
-		}
-
+		$instance = new self($_SESSION['id']);
+		
+		return $instance;
 	}
 
 	function profielGevonden() { return $this->profielGevonden; }

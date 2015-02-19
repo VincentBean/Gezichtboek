@@ -1,19 +1,3 @@
-<?php
-
-	if (isset($_POST['voornaam'])) { // registratie
-
-		$voornaam = $_POST["voornaam"];
-		$achternaam = $_POST["achternaam"];
-		$wachtwoord = $_POST["wachtwoord"];
-		$email = $_POST["email"];
-		$persoonlijke_info = $_POST["persoonlijke_info"];
-		$leeftijd = $_POST["leeftijd"];
-
-
-
-	}
-
-?>
 <html lang="en">
 
 <head>
@@ -109,6 +93,14 @@
                  		<br><br>
 
                   		<input type="submit" class="btn btn-primary" value="Login">
+
+                        <?php
+
+                            if ( isset($_GET['loginerror']) ) {
+                                echo "<br><br><p style='color: red;'>" . $_GET['loginerror'] . "</p>";
+                            }
+
+                        ?>
 
                     </div>
 

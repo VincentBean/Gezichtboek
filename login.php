@@ -1,7 +1,9 @@
 <?php
 
-include "inc/account.php";
-include "inc/profiel.php";
+require_once "inc/account.php";
+require_once "inc/profiel.php";
+
+session_start();
 
   $account = new Accounts();
 
@@ -9,18 +11,17 @@ include "inc/profiel.php";
   $wachtwoord = $_POST['login-wachtwoord'];
 
   if ($account->login($email, $wachtwoord)) {
-    echo "Ingelogd";
-    $profiel = new Profiel();
 
+    $profiel = new Profiel($_SESSION['id']);
 
-    if ($profiel->profielGevonden()) { // profiel is gevonden.
-    	echo "<br>Naam: " + $profiel->getVoornaam() . " " . $profiel->getAchternaam() . "<br>E-mail: " . $profiel->getEmail() . "<br>Reg. datum: " . $profiel->getRegistratiedatum();
-    } else {
-    	echo "<br>Profiel niet gevonden! <br>ID: " . $_SESSION["id"];
+    if ($profiel->profielGevonden()) { // profiel gevonden
+    	header("Location: profiel.php");
+    } else { // profiel niet gevonden
+    	header("Location: index.php?loginerror=Account niet gevonden#login");
     }
 
-  } else {
-    echo "Kon niet inloggen.";
+  } else { // foute login gegevens
+    header("Location: index.php?loginerror=Incorrecte login gegevens#login");
   }
 
 
