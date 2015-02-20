@@ -34,14 +34,12 @@
             <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                 <ul class='nav navbar-nav navbar-right'>
                     <li>
-                        <a href='home.php'>Inloggen</a>
+                        <a id='inlogbtn' href=''>Inloggen</a>
                     </li>
                     <li>
-                        <a href='chat.php'>Registreer</a>
+                        <a id='registreerbtn' href=''>Registreer</a>
                     </li>
-                    <li>
-                        <a href='profiel.php'>Over</a>
-                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
