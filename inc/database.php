@@ -14,7 +14,7 @@ class Database {
 	// Properties LET OP: inloggegevens weghalen!
     private $databaseHost = "127.0.0.1";
     private $databaseUser = "";
-    private $databasePassword = ""
+    private $databasePassword = "";
     private $database = "";
     private $connection;
 
