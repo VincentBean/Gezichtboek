@@ -1,4 +1,12 @@
+<?php
 
+require_once "inc/profiel.php";
+
+session_start();
+
+    if ( isset($_SESSION["loggedin"]) ) header("Location: profiel.php");
+
+?>
 <html lang="en">
 
 <head>
@@ -62,11 +70,18 @@
                    <div class="intro-heading">Geen onzin</div>
 
                    <a href="#" class="btn btn-xl registreerbtn" style="margin-bottom: 5%;">Registreer</a>
-                    
+
                    <br>
 
                    <a href="#" class="btn btn-xl loginbtn">Login</a>
 
+                        <?php
+
+                            if ( isset($_GET['msg']) ) {
+                                echo "<br><br><h4>" . $_GET['msg'] . "</h4>";
+                            }
+
+                        ?>
              </div>
 
           </div>
@@ -79,7 +94,7 @@
 
              <h3>Login:</h3>
 
-                <form action="login.php" method="POST" class="form-inline" >
+                <form action="inc/login.php" method="POST" class="form-inline" >
 
                     <div class="form-group">
 
@@ -115,7 +130,7 @@
 
                 <h3>Registreer:</h3>
 
-                <form action="registreer.php" method="POST" class="form-inline" role="form">
+                <form action="inc/registreer.php" method="POST" class="form-inline" role="form">
 
                     <div class="form-group registreer">
 

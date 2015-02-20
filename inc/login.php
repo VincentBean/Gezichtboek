@@ -1,7 +1,7 @@
 <?php
 
-require_once "inc/account.php";
-require_once "inc/profiel.php";
+require_once "account.php";
+require_once "profiel.php";
 
 session_start();
 
@@ -15,13 +15,13 @@ session_start();
     $profiel = new Profiel($_SESSION['id']);
 
     if ($profiel->profielGevonden()) { // profiel gevonden
-    	header("Location: profiel.php");
+    	header("Location: ../profiel.php");
     } else { // profiel niet gevonden
-    	header("Location: index.php?loginerror=Account niet gevonden#login");
+    	header("Location: ../index.php?loginerror=Account niet gevonden#login");
     }
 
   } else { // foute login gegevens
-    header("Location: index.php?loginerror=Incorrecte login gegevens#login");
+    header("Location: ../index.php?loginerror=Incorrecte login gegevens#login");
   }
 
 

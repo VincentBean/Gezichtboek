@@ -1,6 +1,6 @@
  <?php
 
-include "inc/account.php";
+include "account.php";
 
 $account = new Accounts();
 
@@ -11,6 +11,6 @@ $email = $_POST['email'];
 
 $account->registreer($voornaam, $achternaam, $wachtwoord, $email);
 
-echo "Geregistreerd";
+header("Location: ../index.php");
 
 ?>
