@@ -27,17 +27,17 @@
         <div class='container'>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class='navbar-header '>
-                <a class='navbar-brand' href='index.php'>Gezichtboek</a>
+                <a class='navbar-brand' href='#' id="logo">Gezichtboek</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                 <ul class='nav navbar-nav navbar-right'>
                     <li>
-                        <a id='inlogbtn' href=''>Inloggen</a>
+                        <a class='loginbtn' href='#'>Inloggen</a>
                     </li>
                     <li>
-                        <a id='registreerbtn' href=''>Registreer</a>
+                        <a class='registreerbtn' href='#'>Registreer</a>
                     </li>
                     
                 </ul>
@@ -49,16 +49,98 @@
     
     <div id="wrapper">
 	
-	<img src="img/header-bg.jpg" id="bg" alt="">
-	<header>
-       <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Wel social media</div>
-                <div class="intro-heading">Geen onzin</div>
-                <a href="#registreer" class="btn btn-xl">Registreer</a>
+	   <img src="img/header-bg.jpg" id="bg" alt="">
+
+	   <header>
+
+          <div class="container">
+
+              <div class="intro-text">
+
+                 <div class="intro-lead-in">Wel social media</div>
+
+                   <div class="intro-heading">Geen onzin</div>
+
+                   <a href="#" class="btn btn-xl registreerbtn" style="margin-bottom: 5%;">Registreer</a>
+                    
+                   <br>
+
+                   <a href="#" class="btn btn-xl loginbtn">Login</a>
+
+             </div>
+
+          </div>
+
+	   </header>
+
+       <div id="loginbox">
+
+            <div class="row text-center">
+
+             <h3>Login:</h3>
+
+                <form action="login.php" method="POST" class="form-inline" >
+
+                    <div class="form-group">
+
+                        <input type="email" class="form-control" name="login-email" placeholder="E-mail" required>
+
+                        <br><br>
+
+                        <input type="password" class="form-control" name="login-wachtwoord" placeholder="Wachtwoord" required>
+
+                        <br><br>
+
+                        <input type="submit" class="btn btn-primary" value="Login">
+
+                        <?php
+
+                            if ( isset($_GET['loginerror']) ) {
+                                echo "<br><br><p style='color: red;'>" . $_GET['loginerror'] . "</p>";
+                            }
+
+                        ?>
+
+                    </div>
+
+                </form>
+
             </div>
-        </div>
-	</header>
+
+       </div>
+
+       <div id="registreerbox">
+
+            <div class="row text-center" id="registreer">
+
+                <h3>Registreer:</h3>
+
+                <form action="registreer.php" method="POST" class="form-inline" role="form">
+
+                    <div class="form-group registreer">
+
+                        <input type="text" class="form-control links" name="voornaam" placeholder="Voornaam" required>
+                        <input type="text" class="form-control rechts" name="achternaam" placeholder="Achternaam" required>
+
+                        <input type="password" class="form-control links" name="wachtwoord" placeholder="Wachtwoord" required>
+                        <input type="password" class="form-control rechts" name="wachtwoordopnieuw" placeholder="Wachtwoord Herhalen" required data-validation-match-match="wachtwoord" data-validation-matches-message="Wachtwoord is niet hetzelfde">
+
+                        <input type="email" class="form-control links" name="email" placeholder="E-mail" required>
+                        <input type="email" class="form-control rechts" name="emailopnieuw" placeholder="E-mail Herhalen" required data-validation-matches-match="email" data-validation-match-message="E-mail is niet hetzelfde">
+
+                        <input type="submit" class="btn btn-primary" value="Registreer">
+
+                    </div>
+
+                    <br><br>
+
+                </form>
+
+            </div>
+
+       </div>
+
+
     </div>
 
 
@@ -70,6 +152,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
+    <script src="js/index.js"></script>
 
 </body>
 

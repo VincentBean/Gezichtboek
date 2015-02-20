@@ -1,105 +1,54 @@
 
 #wrapper {
-padding : 5%;
+    padding : 5%;
+    color: #FEC503;
 }
+
 #bg {
   position: fixed; 
   top: 0; 
   left: 0; 
-	
-  /* Preserve aspet ratio */
+
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-}
-.navbar-default {
-    border-color: transparent;
-    background-color: #222;
+
 }
 
-.navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fed136;
+#registreer .links {
+    float: left;
+    width: 48%;
+    margin: 1%;
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:active,
-.navbar-default .navbar-brand.active {
-    color: #fec503;
+#registreer .rechts {
+    float: left;
+    width: 48%;
+    margin: 1%;
 }
 
-.navbar-default .navbar-collapse {
-    border-color: rgba(255,255,255,.02);
+#registreer .volledig {
+    width: 98%;
+    clear: both;
+    margin: 1%;
 }
 
-.navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+#registreer .midden {
+    width: 50%;
+    clear: both;
+    margin: 1%;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+#registreer form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #fed136;
+#registreerbox {
+    margin-top: 20%;
 }
 
-.navbar-default .nav li a {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.navbar-default .nav li a:hover,
-.navbar-default .nav li a:focus {
-    outline: 0;
-    color: #fed136;
-}
-
-.navbar-default .navbar-nav>.active>a {
-    border-radius: 0;
-    color: #fff;
-    background-color: #fed136;
-}
-
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
-    background-color: #fec503;
-}
-
-@media(min-width:768px) {
-    .navbar-default {
-        padding: 25px 0;
-        border: 0;
-        background-color: transparent;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
-
-    .navbar-default .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-    }
-
-    .navbar-default .navbar-nav>.active>a {
-        border-radius: 3px;
-    }
-
-    .navbar-default.navbar-shrink {
-        padding: 10px 0;
-        background-color: #222;
-    }
-
-    .navbar-default.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
-    }
+#loginbox {
+    margin-top: 20%;
 }
