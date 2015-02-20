@@ -1,7 +1,7 @@
 <?php
 require_once "inc/profiel.php";
 
-session_start();//Start de sessie
+session_start();
 
     if ( !isset($_SESSION["loggedin"]) )  header("Location: index.php");
 
