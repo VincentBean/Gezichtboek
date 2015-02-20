@@ -1,3 +1,13 @@
+/*
+    Bestand: index.php
+    Gemaakt: 20-02-2015
+    Door: Vincent Boon
+    Omschrijving:
+        Zorgd ervoor dat het login en registreerformulier word weergegeven als er op een knop word gedrukt.
+        Ook word er een fade animatie gebruikt.
+
+    Laatst gewijzigd: -
+*/
 $(document).ready(function() {
 
 	$('#loginbox').hide();

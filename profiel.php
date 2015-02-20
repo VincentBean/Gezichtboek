@@ -1,4 +1,16 @@
 <?php
+/*
+    Bestand: profiel.php
+    Gemaakt: 19-02-2015
+    Door: Vincent Boon
+    Omschrijving:
+        Profielpagina van gebruikers.
+        Er kan in de get array een id mee worden gegeven van het profiel dat geladen moet worden,
+        als dit niet het geval is word de ingelogde gebruiker geladen.
+
+    Laatst gewijzigd: 
+        - 20-02-2015
+*/
 require_once "inc/profiel.php";
 
 session_start();
@@ -17,7 +29,7 @@ session_start();
 
     } else {
 
-        $profiel = new Profiel($_SESSION['id']);
+        $profiel = Profiel::laadMetIngelogd();
 
         $id = $profiel->getId();
         $profielfoto = "userdata/img/default/profielfoto.png";
@@ -64,6 +76,12 @@ session_start();
                 <div id="naam"> <?php echo $profiel->getVoornaam() . " " . $profiel->getAchternaam(); ?> </div>
 
                 <div id="bio"> <?php echo $bio; ?> </div>
+
+                <div id="knoppen">
+
+                    
+
+                </div>
 
             </div>
 

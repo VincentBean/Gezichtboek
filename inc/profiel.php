@@ -6,7 +6,8 @@
 	Omschrijving:
 		Houd een profiel van een gebruiker.
 
-	Laatst gewijzigd: -
+	Laatst gewijzigd: 
+		- 20-02-2015
 */
 require_once("database.php");
 
@@ -21,6 +22,13 @@ class Profiel {
 	private $bio;
 	private $registratiedatum;
 
+
+	/*
+		Constructor, laad gegevens automatisch van de id die word meegegeven
+		Als het profiel niet gevonden is dan word $profielGevonden of false gezet.
+
+		@arg $id - id van de gebruiker
+	*/
 	function __construct($id) {
 
 		$this->database = new Database();
@@ -48,6 +56,11 @@ class Profiel {
 
 	}
 
+	/*
+		Om het profiel te laden van de ingelogde gebruiker
+
+		@return Profiel - de klasse met gegevens van de ingelogde gebruiker.
+	*/
 	public static function laadMetIngelogd() {
 
 		$instance = new self($_SESSION['id']);
@@ -55,6 +68,11 @@ class Profiel {
 		return $instance;
 	}
 
+	/*
+		Getters voor de gegevens
+
+		@return profiel gegeven
+	*/
 	function profielGevonden() { return $this->profielGevonden; }
 	function getId() { return $this->id; }
 	function getVoornaam() { return $this->voornaam; }

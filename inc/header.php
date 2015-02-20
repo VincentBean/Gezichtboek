@@ -1,4 +1,13 @@
 <?php
+/*
+    Bestand: header.php
+    Gemaakt: 20-02-2015
+    Door: Vincent Boon
+    Omschrijving:
+        Bevat de header van alle pagina's
+
+    Laatst gewijzigd: -
+*/
 
 	echo "<!-- Navigation -->
     <nav class='navbar navbar-default navbar-fixed-top' style='background-color: #222; height: 5%; padding: 0;'>

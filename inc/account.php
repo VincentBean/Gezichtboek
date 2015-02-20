@@ -77,7 +77,29 @@ class Accounts {
 		return false;
 	}
 
+	/*
+		Log een gebruiker uit.
 
+		@arg id - id van de gebruiker
+
+		@return bool - successvol
+	*/
+	function loguit($id) {
+
+		if ( !isset($_SESSION["loggedin"])) {
+
+			if ($_SESSION["loggedin"] == false) {
+				return false;
+			}
+
+		}
+
+
+		$_SESSION["loggedin"] = false;
+		unset( $_SESSION["id"] );
+
+		return true;
+	}
 
 }
 

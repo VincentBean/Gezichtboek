@@ -1,5 +1,13 @@
 <?php
+/*
+    Bestand: style.php
+    Gemaakt: 20-02-2015
+    Door: Vincent Boon
+    Omschrijving:
+        Bevat de links naar de css bestanden die op de pagina's worden gebruikt.
 
+    Laatst gewijzigd: -
+*/
 	echo " 
     <!-- Bootstrap Core CSS -->
     <link href='css/bootstrap.min.css' rel='stylesheet'>
