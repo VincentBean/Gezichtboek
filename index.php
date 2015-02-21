@@ -165,9 +165,6 @@ session_start();
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
-
     <script src="js/index.js"></script>
 
 </body>
