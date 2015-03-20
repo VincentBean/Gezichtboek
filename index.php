@@ -4,7 +4,11 @@ require_once "inc/profiel.php";
 
 session_start();
 
-    if ( isset($_SESSION["loggedin"]) ) header("Location: profiel.php");
+    if ( isset($_SESSION["loggedin"]) ) {
+        if ($_SESSION["loggedin"]) {
+            header("Location: profiel.php");
+        }
+    }
 
 ?>
 <html lang="en">
@@ -47,8 +51,10 @@ session_start();
                     <li>
                         <a class='registreerbtn' href='#'>Registreer</a>
                     </li>
-                    
+
                 </ul>
+
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -75,13 +81,17 @@ session_start();
 
                    <a href="#" class="btn btn-xl loginbtn">Login</a>
 
-                        <?php
+                    <?php
 
-                            if ( isset($_GET['msg']) ) {
-                                echo "<br><br><h4>" . $_GET['msg'] . "</h4>";
-                            }
+                        if ( isset($_GET['loginerror']) ) {
+                            echo "<br><br><p style='color: red; font-size: 1.4em;'>" . $_GET['loginerror'] . "</p>";
+                        }
 
-                        ?>
+                        if ( isset($_GET['msg']) ) {
+                            echo "<br><br><h4>" . $_GET['msg'] . "</h4>";
+                        }
+                    ?>
+
              </div>
 
           </div>
@@ -107,14 +117,6 @@ session_start();
                         <br><br>
 
                         <input type="submit" class="btn btn-primary" value="Login">
-
-                        <?php
-
-                            if ( isset($_GET['loginerror']) ) {
-                                echo "<br><br><p style='color: red;'>" . $_GET['loginerror'] . "</p>";
-                            }
-
-                        ?>
 
                     </div>
 

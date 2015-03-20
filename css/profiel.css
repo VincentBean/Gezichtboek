@@ -64,3 +64,12 @@ html, body {
 	color: #FEC503;
 	font-size: 200%;
 }
+
+#knoppen {
+	margin-top: 34%;
+	margin-left: 94%;
+}
+
+#knoppen img {
+	width: 60%;
+}

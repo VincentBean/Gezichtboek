@@ -33,8 +33,15 @@ session_start();
 
         $id = $profiel->getId();
         $profielfoto = "userdata/img/default/profielfoto.png";
-        $bio = "<a href='aanpassen.php'>Vertel wat overjezelf</a>";   
 
+        if ($profiel->getBio() != "") {
+
+        	$bio = $profiel->getBio();
+
+        } else {
+        	$bio = "<a href='aanpassen.php'>Vertel wat overjezelf</a>";
+
+        }
     }
  
 ?>
@@ -79,7 +86,7 @@ session_start();
 
                 <div id="knoppen">
 
-                    
+                    <a href="inc/loguit.php"><img src="img/icons/loguit.png" title="Loguit"></a>
 
                 </div>
 
