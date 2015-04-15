@@ -9,7 +9,7 @@
         als dit niet het geval is word de ingelogde gebruiker geladen.
 
     Laatst gewijzigd: 
-        - 20-02-2015
+        - 25-03-2015
 */
 require_once "inc/profiel.php";
 
@@ -23,17 +23,22 @@ session_start();
 
         $profiel = new Profiel($_GET['id']);
 
+        $knoppen = false;
         $id = $profiel->getId();
-        $profielfoto = "userdata/img/default/profielfoto.png";
-        $bio = "Deze gebruiker heeft nog niks over zichtzelf verteld"; 
+        
+        if ($profiel->getBio() != "") {
+            $bio = $profiel->getBio();
+        } else {
+          $bio = "Deze gebruiker heeft nog niks over zichtzelf verteld";  
+        }       
 
     } else {
 
         $profiel = Profiel::laadMetIngelogd();
 
+        $knoppen = true;
         $id = $profiel->getId();
-        $profielfoto = "userdata/img/default/profielfoto.png";
-
+        
         if ($profiel->getBio() != "") {
 
         	$bio = $profiel->getBio();
@@ -78,17 +83,23 @@ session_start();
 
             <div id="profielinfo">
                
-                <img id="profielfoto" src="<?php echo $profielfoto; ?>">
+                <img id="profielfoto" src="<?php echo $profiel->getProfielfoto(); ?>">
 
                 <div id="naam"> <?php echo $profiel->getVoornaam() . " " . $profiel->getAchternaam(); ?> </div>
 
                 <div id="bio"> <?php echo $bio; ?> </div>
 
-                <div id="knoppen">
+                <?php
 
-                    <a href="inc/loguit.php"><img src="img/icons/loguit.png" title="Loguit"></a>
+                if ($knoppen) {
+                    echo '<div id="knoppen">
+                            <a href="inc/loguit.php"><img src="img/icons/loguit.png" title="Loguit"></a>
+                            <a href="instellingen.php"><img src="img/icons/instellingen.png" title="Instellingen"></a>
+                          </div>';
+                }
 
-                </div>
+
+                ?>
 
             </div>
 
@@ -113,7 +124,7 @@ session_start();
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>a
+    <script src="js/agency.js"></script>
 
 </body>
 

@@ -15,6 +15,7 @@ html, body {
 	float: left;
 	margin: 0px;
 	background-color: #575757;
+	border-right: 1px solid black;
 }
 
 #rechts {
@@ -26,18 +27,7 @@ html, body {
 }
 
 #profielinfo {
-	height: 50%;
-	width: 100%;
-	background-color: #575757;
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
-}
-
-#vriendenlijst {
-	height: 50%;
-	width: 100%;
-	border-right: 1px solid black;
-	background-color: #575757;
+	color: #FED136;
 }
 
 #profielfoto {
@@ -47,33 +37,34 @@ html, body {
 	border-radius: 20%;
 	width: 30%;
 	float: left;
+	clear: both;
 }
-
 #bio {
 	margin-left: 6%;
 	padding-top: 4%;
 	clear: both;
+	font-size: 1.2em;
 	color: #FEC503;
 }
 
 #naam {
 	margin-left: 4%;
 	margin-top: 6%;
+	margin-right: 0px;
 	float: left;
 	color: #FEC503;
 	font-size: 200%;
+	width: 60%;
 }
 
-#knoppen {
-	margin-top: 30%;
-	margin-left: 75%;
-	padding-right: 1%;
-	height: 9%;
-	width: 25%;
+#naamtekst {
+	margin-right: 0.1%;
+	width: 75%;
 }
 
-#knoppen img {
-	width: 25%;
-	margin-left: 10%;
+.klein {
+	font-size: 0.4em;
 	float: right;
+	margin-left: 1%;
+	width: 20%;
 }

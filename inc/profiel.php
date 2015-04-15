@@ -21,6 +21,7 @@ class Profiel {
 	private $email;
 	private $bio;
 	private $registratiedatum;
+	private $profielfoto;
 
 
 	/*
@@ -45,6 +46,17 @@ class Profiel {
 			$this->email = $resultaat_array["email"];
 			$this->bio = $resultaat_array["bio"];
 			$this->registratiedatum = $resultaat_array["registratiedatum"];
+
+			if ( $resultaat_array["profielfoto"] == NULL) {
+				$this->profielfoto = "userdata/img/default/profielfoto.png";
+			} else {
+				$this->profielfoto = "userdata/img/" . $id . "/" . $resultaat_array["profielfoto"];
+
+				if (!file_exists($this->profielfoto)) {
+					$this->profielfoto = "userdata/img/default/profielfoto.png";
+				}
+
+			}	
 
 			$this->profielGevonden = true;
 
@@ -80,7 +92,7 @@ class Profiel {
 	function getEmail() { return $this->email; }
 	function getBio() { return $this->bio; }
 	function getRegistratiedatum() { return $this->registratiedatum; }
-
+	function getProfielfoto() { return $this->profielfoto; }
 }
 
 ?>
